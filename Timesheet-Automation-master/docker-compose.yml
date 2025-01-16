@@ -1,0 +1,14 @@
+services:
+  playwright-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - C:/DockerConfigs/config.json:/app/config.json:ro
+    environment:
+      NODE_ENV: production
+    deploy:
+      resources:
+        limits:
+          memory: 2G
+          cpus: '1.0'
